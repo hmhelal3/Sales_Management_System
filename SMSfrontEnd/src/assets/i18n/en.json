@@ -1,0 +1,27 @@
+{
+    
+    "salesManagementSystem":"Sales Management System",
+    "home":"Home",
+    "tumsa":"TUMSA",
+    "dashboard":"Dashboard",
+    "customer":"Customers",
+    "customerNo":"Customers No",
+    "customerReg":"Custemor Registration",
+    "customerList":"Custemor List",
+    "itemsService":"Items/Service",
+    "itemsServiceReg":"Items/Service Reg",
+    "itemsServiceRegList":"Item/Service List",
+    "totalCreditSales":"Total Credit Sales",
+    "thisMonthtotalCreditSales":"This Month Total Credit Sales",
+    "thisMonthtotalCashSales":"This Month Total Cash Sales",
+    "totalSalesRefun":"Total Sales Refund",
+    "totalproforma":"Total Proforma",
+    "itemsServiceNo":"Items/Services",
+    "salesInvoice":"Sales Invoice",
+    "createInvoice":"Create Invoice",
+    "salesInvoiceList":"sales Invoice List ",
+    "totalCashSales":"Total Cash Sales"
+
+    
+  
+}

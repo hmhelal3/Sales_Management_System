@@ -1,0 +1,134 @@
+package insa.sms.model;
+
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+public class Itemservice implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private Integer id;
+    private  String itemServiceName;
+    private String code;
+    private String uom;
+    private String category;
+
+    private  String description;
+    private Double purchasedPrice;
+    private String tax;
+    private Double sellingUnitPrice;
+    private Integer quantity;
+
+    public Itemservice(){ }
+
+    public Itemservice(String itemServiceName, String code, String uom, String category, String description, Double purchasedPrice, String tax, Double sellingUnitPrice, Integer quantity) {
+        this.itemServiceName = itemServiceName;
+        this.code = code;
+        this.uom = uom;
+        this.category = category;
+        this.description = description;
+        this.purchasedPrice = purchasedPrice;
+        this.tax = tax;
+        this.sellingUnitPrice = sellingUnitPrice;
+        this.quantity = quantity;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getItemServiceName() {
+        return itemServiceName;
+    }
+
+    public void setItemServiceName(String itemServiceName) {
+        this.itemServiceName = itemServiceName;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getUom() {
+        return uom;
+    }
+
+    public void setUom(String uom) {
+        this.uom = uom;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Double getPurchasedPrice() {
+        return purchasedPrice;
+    }
+
+    public void setPurchasedPrice(Double purchasedPrice) {
+        this.purchasedPrice = purchasedPrice;
+    }
+
+    public String getTax() {
+        return tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
+    }
+
+    public Double getSellingUnitPrice() {
+        return sellingUnitPrice;
+    }
+
+    public void setSellingUnitPrice(Double sellingUnitPrice) {
+        this.sellingUnitPrice = sellingUnitPrice;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Itemservice{" +
+                "id=" + id +
+                ", itemServiceName='" + itemServiceName + '\'' +
+                ", code='" + code + '\'' +
+                ", uom='" + uom + '\'' +
+                ", category='" + category + '\'' +
+                ", description='" + description + '\'' +
+                ", purchasedPrice=" + purchasedPrice +
+                ", tax='" + tax + '\'' +
+                ", sellingUnitPrice=" + sellingUnitPrice +
+                ", quantity=" + quantity +
+                '}';
+    }
+}

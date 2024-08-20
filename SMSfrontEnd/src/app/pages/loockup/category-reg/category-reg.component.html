@@ -1,0 +1,37 @@
+<form class="container" (ngSubmit)="saveCategoryData()">
+  <div class="card" >
+    <div class="text-right"> 
+          <a  class="btn btn-primary" routerLink="/categoryList">Search Category</a>
+      </div>
+      <div class="text-center"> 
+        <h3>Category Registration </h3>
+        </div> 
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+                <label>Category name</label>
+                <span class="text-danger">*</span>
+                <input  type="text" [(ngModel)] ="category.categoryName" id="nameId" name="categoryName" required class="form-control"  placeholder="Enter name "/>
+            </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+              <label>Category Description</label>
+              <span class="text-danger">*</span>
+              <input  type="text" id="descriptionid" [(ngModel)] ="category.description"  name="description" class="form-control"/>
+          </div>
+      </div>
+     
+      </div>
+      <br>
+      <br>
+      <div class="text-center"> 
+        <button   type="submit" class="btn btn-success">Save</button> | 
+        <a class="btn btn-danger" routerLink="/categoryList">Back</a>
+        </div> 
+    </div>
+    </div>
+  
+
+    </form>

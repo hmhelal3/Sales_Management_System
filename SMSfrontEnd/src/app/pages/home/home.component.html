@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<body>  
+<header class="header1" id="uiNavbar">
+  <button class="openbtn"  id="demo" onclick="closeNav()">☰Open Sidebar</button> 
+
+    <!-- <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  -->
+
+ 
+</header>
+
+
+<div class="sidebar" id="sidBarToggleId">
+  <h2>SMS</h2>
+  <mat-divider></mat-divider>
+
+  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a> -->
+
+
+ 
+ 
+  <ul > 
+  <li class="nav-item">      <a  routerLink="dashboard" class="nav-link" routerLinkActive="active">dashboard</a> </li>
+  <li class="nav-item"> <a  routerLink="/home" class="nav-link" >Home</a> </li>
+
+
+     <li class="nav-item">  <a href="#customerSubmanu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <i class="fas fa-home"></i>    Customer   </a>
+     <ul class="collapse list-unstyled" id="customerSubmanu">
+      <a  routerLink="/CustomerReg" class="nav-link" >Custemor Registration </a>  
+      </ul>
+      <ul class="collapse list-unstyled" id="customerSubmanu">
+        <a  routerLink="/CustomerList" class="nav-link" >Custemor List </a>  
+        </ul>
+    </li>
+
+    <li class="nav-item">  <a href="#loockupSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+      <i class="fas fa-home"></i>    loockup    </a>
+    <ul class="collapse list-unstyled" id="loockupSubmenu">
+    <a  routerLink="/category" class="nav-link" >Category Reg </a>  
+    <ul class="collapse list-unstyled" id="loockupSubmenu">
+      <a  routerLink="/categoryList" class="nav-link" >Category List  </a>  
+      </ul>
+    </ul>
+    
+    </li>
+
+    <li class="nav-item">  <a href="#itemServiceSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+      <i class="fas fa-home"></i>    Products  </a>
+   <ul class="collapse list-unstyled" id="itemServiceSubmenu">
+    <a  routerLink="/ItemServiceReg" class="nav-link" >Products Registration </a>  
+    </ul>
+    <ul class="collapse list-unstyled" id="itemServiceSubmenu">
+      <a  routerLink="/ItemServiceList" class="nav-link" >Products List </a>  
+      </ul>
+  </li>
+  
+ 
+  <li class="nav-item">  <a href="#voucherSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+    <i class="fas fa-home"></i>    Voucher   </a>
+    <ul class="collapse list-unstyled" id="voucherSubmenu">
+      <a  routerLink="/createInvoice" class="nav-link" >Create Invoice  </a>  
+      </ul>
+ <ul class="collapse list-unstyled" id="voucherSubmenu">
+  <a  routerLink="/salesInvoice" class="nav-link" >Sales Invoice  </a>  
+  </ul>
+  <ul class="collapse list-unstyled" id="voucherSubmenu">
+    <a  routerLink="/salesInvoiceList" class="nav-link" >Sales Invoice List  </a>  
+    </ul>
+</li>  
+
+
+
+
+<li class="nav-item">  <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+  <i class="fas fa-home"></i>    Addmin    </a>
+<ul class="collapse list-unstyled" id="userSubmenu">
+<a  routerLink="/userReg" class="nav-link" >Signup </a>  
+<ul class="collapse list-unstyled" id="userSubmenu">
+  <a  routerLink="/loginReg" class="nav-link" >Login  </a>  
+  </ul>
+</ul>
+
+</li>
+
+
+
+<li class="nav-item"> <a  routerLink="/about" class="nav-link" >about</a></li>
+<li class="nav-item"> <a  routerLink="/help" class="nav-link" >help</a></li>
+</ul>
+</div>
+
+  
+
+<div class="main" id="main">
+  <router-outlet></router-outlet>
+
+
+</div>
+ 
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div >
+      <b>Version</b> 1
+  </div>
+  <strong>Copyright &copy; 2022 <a href="http://www.DB.gov.et/"  target="_blank" >Sales Managment System  </a>.</strong> All rights reserved.
+</footer>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+.title{
+    font-size: 24px;
+    font-weight: 500;
+    position: relative;
+    text-align: left;
+  }
+ .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 315px;
+   margin-left: 0px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+
+   .adrass-detail{
+    font-size: 20px;
+    font-weight: 500;
+   }
+   .titleb{
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+  }
+  .existing{
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    margin-left: 700px;
+   
+  }
+
+  .titleb{
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+  }
+  .bg-clr {
+    background-color: gray;
+    color: white;
+}
+.existing1{
+  
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  text-align: left;
+  margin-right: 500px;
+  margin-left: 700px;  
+ 
+}

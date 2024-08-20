@@ -1,0 +1,46 @@
+
+ <form style="background-color: rgba(245, 246, 247, 0.959);  width: auto; margin-left: 15px; margin-right: 10px;" class="row g-1">
+  <div class="text-right"> 
+    <a class="btn btn-success" routerLink="/category">Create New [+]</a>
+    </div>     
+  <div class="text-center"> 
+          <h3> Category List </h3>  
+          </div>
+          <div style="padding-left: 100px; padding-right: 100px; "> 
+        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-striped table-bordered table-sm row-border hover  table-hover" id="datatableexample">
+          <thead class="bg-clr">
+            <tr>
+              <th>No. </th>
+              <th>Category Name </th>             
+              <th >Description</th>
+              <th >Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr 
+               *ngFor="let categorysList of categorys  let i = index;">
+              <td>{{ i + 1 }}</td>
+              <td>{{ categorysList.categoryName }}</td>
+              <td>{{ categorysList.description }}</td>             
+              <td> 
+                <button (click)="updateCategory(categorysList.id)" class="btn btn-outline-primery tooltips">Update  </button>  
+                <button (click)="deleteCategory(categorysList.id)"  class="btn btn-danger btn-sm mx-1"  title="delete"  type="button"  >  <i class="bi bi-trash"></i> </button>
+              
+            </td>
+            
+                  
+            </tr>
+          </tbody>
+            
+        </table>
+    
+      </div>   
+    
+         
+
+
+    
+
+        </form>
+ 
+

@@ -1,0 +1,145 @@
+
+
+    <form class="container"   #addForm="ngForm" (ngSubmit)="onAddCustomer1(addForm)" >
+      <div class="card"   >
+        <div class="text-right"> 
+              <a  class="btn btn-primary" routerLink="/CustomerList">Customer List</a>
+          </div>
+          <div class="text-center"> 
+            <h3>{{'customerReg'|translate}}</h3>
+            </div> 
+          <div class="card-body">
+            <div class="row">
+            
+              <div class="row g-3">
+                <label for="customerNameId"  class="control-label col-sm-2" style="width: 150px;  text-align: right;">Customer Name</label>
+                <div class="col-sm">
+                  <input type="text" ngModel  id="customerNameId" name="customerName" required class="form-control"  placeholder="Enter customer name ">
+                </div>
+                <label for="tinNo"   class="control-label col-sm-2" style="width: 150px; text-align: right;">Phone No.</label>
+              <div class="col-sm">
+                <input type="text" id="tinNo" ngModel  name="tinNo" class="form-control" required placeholder="enter Phone number ">
+              </div>
+            
+              </div>
+    
+    
+    
+              <!-- <div class="row g-3">
+                <label for="BusinessId" class="control-label col-sm-2" style="width: 150px;  text-align: right;">Business Type</label>
+                <div class="col-sm">
+                  <select class="form-select form-select-lg "  id="businessTypeId" ngModel  name="businessType" >
+                    <option value="" selected = "true" disabled >-- select branch --</option>
+                    <option value="Business type 1">Business type </option>
+                    <option value="Business type 2">Business type 3</option>
+                    <option value="Business type 3">Business type 2</option>
+                    <option value="Business type 4">Business type 1</option>
+                  </select>  
+                </div>
+             
+                <label for="customerTypeId" class="control-label col-sm-2" style="width: 150px; text-align: right;">Customer Type</label>
+                <div class="col-sm">
+                  <select class="form-select" id="customerTypeId" ngModel  name="customerType">
+                    <option value="" selected = "true" disabled >--- select one ---</option>
+                    <option value="PLC">PLC</option>
+                    <option value="Public Organization">Public Organization</option>
+                    <option value="Other">Other</option>
+                  </select> 
+                  </div>
+              </div>
+     -->
+              
+        <div class="row g-3">
+       
+            <label for="vatNoId"  class="control-label col-sm-2" style="width: 150px;  text-align: right;">Email:</label>
+            <div class="col-sm">
+              <input type="text" id="vatNoId" ngModel name="vatNo" class="form-control" value="" placeholder="Enter Email" >
+            </div>
+            <!-- <label for="contactPersen"  class="control-label col-sm-2" style="width: 150px; text-align: right; ">Contact Person</label>
+            <div class="col-sm">
+              <input type="text" id="contactPersen" ngModel  name="contactPerson" class="form-control" placeholder="Contact Person." >
+                    
+              </div> -->
+        </div>
+    
+<!--     
+        <div class="row g-3">
+          <label for="remarkid"  class="control-label col-sm-2" style="width: 150px;  text-align: right;">Remark </label>
+              <div class="col-sm">
+                <textarea type="text" id="remarkid" ngModel name="remarks" class="form-control"  > </textarea>
+              
+            </div>
+            <label   class="control-label col-sm-2" style="width: 150px; text-align: right;">Status</label>
+                <div class="col-sm">
+           
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" ngModel  name="customerStatus" id="InactiveId" value="Inactive">
+                <label class="form-check-label" for="ActiveId">Inactive</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" ngModel  name="customerStatus"   id="activId" value="Active">
+                <label class="form-check-label" for="activId">Active</label>
+              </div>
+           
+            </div>
+           
+        </div> -->
+    
+    
+    
+        <div style="margin-left: 20px;" class="row g-2 align-items-center">
+          <div class="adrass-detail col-md-8">Details Addrass Information  </div>
+     </div>
+    
+     
+     <div class="row g-3">
+      <label for="countryId"   class="control-label col-sm-2" style="width: 150px;  text-align: right;">Country:</label>
+        <div class="col-sm">
+              <input type="text" ngModel id="countryId" name="country" #country="ngModel" class="form-control"  [ngClass]="{ 'is-invalid': addForm.submitted && country.invalid }" required   placeholder="Select country ">
+           <div *ngIf="addForm.submitted && country.errors" class="invalid-feedback">
+           <div *ngIf="country.errors?.['required']">country is required</div>
+         </div>
+        </div>
+        <label for="regionId"   class="control-label col-sm-2" style="width: 150px;  text-align: right;">Region:</label>
+        <div class="col-sm">
+              <input type="text" ngModel id="regionId" name="region" #region="ngModel" class="form-control"  [ngClass]="{ 'is-invalid': addForm.submitted && region.invalid }" required   placeholder="Select Region ">
+           <div *ngIf="addForm.submitted && region.errors" class="invalid-feedback">
+           <div *ngIf="region.errors?.['required']">region is required</div>
+         </div>
+        </div>
+       
+       
+    </div>
+    
+    
+    <div class="row g-3">
+        <label for="cityId"  class="control-label col-sm-2" style="width: 150px; text-align: right;">City:</label>
+        <div class="col-sm">
+          <input type="text" ngModel id="cityId" name="city" class="form-control" #city="ngModel" class="form-control"  [ngClass]="{ 'is-invalid': addForm.submitted && city.invalid }" required >
+          <div *ngIf="addForm.submitted && city.errors" class="invalid-feedback">
+            <div *ngIf="city.errors?.['required']">city is required</div>
+        </div>  </div>
+        <label for="phoneNoberid"  class="control-label col-sm-2" style="width: 150px; text-align: right; ">Zip Code:</label>
+        <div class="col-sm">
+          <input type="text" id="phoneNoberid" ngModel  name="phoneNo" class="form-control" placeholder="Enter Zip Code." >
+                
+          </div>
+    </div>
+    
+    
+    
+    
+    
+    </div>
+          <br>
+          <br>
+          <div class="text-center"> 
+            <button   type="submit" class="btn btn-success">Save</button> | 
+            <a class="btn btn-danger" routerLink="/CustomerList">Back</a>
+            </div> 
+       
+      </div> 
+        </div>
+        </form>
+
+

@@ -1,0 +1,105 @@
+<div id="mySidenav" class="sidenav" [ngClass]="status ? 'active' : 'inactive'">
+    <p class="logo"><span> {{'ISDB'|translate}}</span><b [ngClass]="status ? 'hidden' : 'visible'">-SMS</b></p>    
+    <hr/>
+    <a routerLink="/homePage" class="nav-link icon-a" ><i class="fa fa-dashboard icons"></i> &nbsp;<span [ngClass]="status ? 'hidden' : 'visible'"> {{'dashboard'|translate}}</span></a>
+    <a href="#"class="icon-a" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-users icons"></i> &nbsp;<span [ngClass]="status ? 'hidden' : 'visible'"> {{'customer'|translate}}</span><i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-1" class="collapse">
+              <li><a routerLink="/CustomerReg" class="nav-link" ><i class="fa fa-angle-double-right"></i>  {{'customerReg'|translate}}</a></li>
+              <li><a routerLink="/CustomerList" class="nav-link"><i class="fa fa-angle-double-right"></i> {{'customerList'|translate}}</a></li>
+            </ul>
+    <a href="#"class="icon-a" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-product-hunt icons"></i> &nbsp;<span [ngClass]="status ? 'hidden' : 'visible'">  {{'itemsService'|translate}}</span><i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-2" class="collapse">
+                <li><a routerLink="/ItemServiceReg" class="nav-link" ><i class="fa fa-angle-double-right"></i> {{'itemsServiceReg'|translate}}</a></li>
+                <li><a routerLink="/ItemServiceList" class="nav-link"><i class="fa fa-angle-double-right"></i>{{'itemsServiceRegList'|translate}}</a></li>
+            </ul>
+    <a href="#"class="icon-a" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-shopping-bag icons"></i> &nbsp;<span [ngClass]="status ? 'hidden' : 'visible'">{{'salesInvoice' |translate}} </span><i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-3" class="collapse">
+                <li><a routerLink="/createInvoice" class="nav-link" ><i class="fa fa-angle-double-right"></i>{{'createInvoice' |translate}}  </a></li>
+                <li><a routerLink="/salesInvoice" class="nav-link" ><i class="fa fa-angle-double-right"></i> Sales Invoice2</a></li>
+                <li><a routerLink="/salesInvoiceList" class="nav-link"><i class="fa fa-angle-double-right"></i>{{'salesInvoiceList' |translate}} </a></li>
+            </ul>
+     <a href="#"class="icon-a" data-toggle="collapse" data-target="#submenu-4"><i class="fa fa-list icons"></i> &nbsp;<span [ngClass]="status ? 'hidden' : 'visible'">loockUp </span><i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-4" class="collapse">
+                <li><a routerLink="/category" class="nav-link" ><i class="fa fa-angle-double-right"></i> category Reg </a></li>
+                <li><a routerLink="/salesInvoice" class="nav-link" ><i class="fa fa-angle-double-right"></i> Sales Invoice2</a></li>
+                <li><a routerLink="/categoryList" class="nav-link"><i class="fa fa-angle-double-right"></i> category Listt</a></li>
+            </ul>
+    <a href="#"class="icon-a" data-toggle="collapse" data-target="#submenu-5"><i class="fa fa-user icons"></i> &nbsp;<span [ngClass]="status ? 'hidden' : 'visible'">Admin </span><i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-5" class="collapse">
+                <li><a routerLink="/userReg" class="nav-link" ><i class="fa fa-angle-double-right"></i> Sign Up</a></li>
+                <li><a routerLink="/loginReg" class="nav-link" ><i class="fa fa-angle-double-right"></i> SignIn</a></li>
+            </ul>
+
+  </div>
+
+  <div id="main" [ngClass]="status ? 'fullw' : 'smallw'">
+  
+    <div class="head">
+      <div class="col-div-6">
+  <span style="font-size:30px;cursor:pointer; color: white;" class="nav"  (click)="addToggle()">&#9776; {{'salesManagementSystem'|translate}}</span>
+  <span style="font-size:100px;cursor:pointer; color: white;" class="nav2"  (click)="addToggle()">&#9776; {{'dashboard'|translate}}</span>
+  </div>
+ 
+  <ul  class="nav navbar-right top-nav">
+            
+   
+
+<!-- <div style="margin-right: -10px; text-align: right;  margin-top: 20px; ">
+    <label  class="control-label col-sm-2" style="width: 100px;  color: aquamarine;">Language</label>
+    <div class=" wedth col-sm-4">
+        <select class="form-select" (change)="ChangeLang($event)" name="" id="">
+            <option [selected]="lang==='en'" value="en">English</option>
+            <option [selected]="lang==='am'" value="am">Amharic</option>
+ 
+        </select>
+     
+    </div>
+   
+</div> -->
+
+
+
+<li class="dropdown">
+    <a  href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User </a>
+    <ul class="dropdown-menu">
+        <li><a ><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Pswd</a></li>
+        <li><a href="#" (click)="logOut()"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+    </ul>
+</li>
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+  
+    
+</ul>
+
+
+    <div class="clearfix"></div>
+  </div>
+
+  <hr/>
+  
+    <div class="clearfix"></div>
+    <br/>
+    
+    <router-outlet></router-outlet>
+    <div class="clearfix"></div>
+  
+  </div>
+  <footer class="footer">
+    <div >
+        <!-- <b>Version</b> 1 -->
+    </div>
+    <!-- <strong>Copyright &copy; 2022 <a href="http://www.DB.gov.et/"  target="_blank" >Information Network Security Agency (INSA) </a>.</strong> All rights reserved. -->
+  </footer>  

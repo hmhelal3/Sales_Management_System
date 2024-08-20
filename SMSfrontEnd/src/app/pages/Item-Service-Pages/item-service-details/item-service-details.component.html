@@ -1,0 +1,68 @@
+
+
+<div style="margin-left: 1400px; height: 40px; width: 100px; ;  background-color: rgba(171, 198, 221, 0.959); " class="titleb "><button class="btn btn-link" (click)="navigatinLst()"  type="button" >Search </button> </div>
+ 
+ 
+<form style="background-color: rgba(206, 215, 223, 0.959);  width: auto; margin-left: 15px; margin-right: auto;" class="row g-3">
+           
+ <!-- <div *ngFor="let ItemServices of itemSrvices">
+               {{ ItemServices.code }} </div> -->
+
+<div  >  
+    <div >    <label style="margin-left: 800px; width: 100px;" class="control-label  titleb"></label> </div>
+<div  class=" existing1">Product Details </div>
+</div>
+
+
+  <!-- <form #addForm="ngForm" (ngSubmit)="onAddItemService(addForm)"   class="row g-3"> -->
+
+   
+    <div class="row g-1">
+      <label for="itemServiceNameId"  class="control-label col-sm-3" style="width: 150px;  text-align: right;">Product Name</label>
+      <div class="col-sm">
+        {{itemSrvices.itemServiceName}}
+      </div>
+      <label for="codeid"   class="control-label col-sm-2" style="width: 150px; text-align: right;"> Product Code</label>
+    <div class="col-sm">
+        {{itemSrvices.code}}   
+     </div>
+    <label for="categoryId" class="control-label col-sm-2" style="width: 150px;  text-align: right;">Category </label>
+    <div class="col-sm">
+        {{itemSrvices.categoryId}}  
+    </div>
+    </div>
+
+    <div class="row g-1">
+      <label for="uomId" class="control-label col-sm-2" style="width: 150px; text-align: right;">Supplier</label>
+      <div class="col-sm">
+        {{itemSrvices.uom}} 
+        </div>
+        <label for="descriptionId"  class="control-label col-sm-2" style="width: 150px;  text-align: right;">Description</label>
+        <div class="col-sm">
+            {{itemSrvices.description}}    
+        </div>
+        <label for="taxId"  class="control-label col-sm-2" style="width: 150px; text-align: right; ">Tax</label>
+        <div class="col-sm">
+            {{itemSrvices.tax}}     
+          </div>
+    </div>
+       
+        <div class="row g-1">
+         <label for="quantityid" class="control-label col-sm-2" style="width: 150px; text-align: right;">Quantity </label>
+         <div class="col-sm">
+            {{itemSrvices.quantity}}
+           </div>
+           <label for="purchasedPriceid"  class="control-label col-sm-2" style="width: 150px; text-align: right; ">Purchased Price</label>
+           <div class="col-sm">
+            {{itemSrvices.purchasedPrice}}
+         </div>
+           <label for="sellingUnitPriceid"  class="control-label col-sm-2" style="width: 150px; text-align: right; ">Selling Unit Price </label>
+           <div class="col-sm">
+            {{itemSrvices.sellingUnitPrice}}
+           </div>
+       </div>
+<br> <br>
+
+
+<!-- <h1 *ngIf="registerSucess"> Register Success :D </h1> -->
+</form>

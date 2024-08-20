@@ -1,0 +1,24 @@
+{
+    "salesManagementSystem":"የሽያጭ አስተዳደር ስርዓት",
+    "home":"መነሻ",
+    "tumsa":"ቱምሳ",
+    "dashboard":"ዳሽቦርድ",
+    "customer":"ደንበኛ",
+    "customerNo":"የደንበኛች ብዛት",
+    "customerReg":"የደንበኛ መመዝገቢያ",
+    "customerList":"የደንበኛ ዝርዝር",
+    "itemsService":"የእቃ/አገልግሎት",
+    "itemsServiceReg":"የእቃ/አገልግሎት መመዝገቢያ",
+    "itemsServiceRegList":"የእቃ/አገልግሎት ዝርዝር",
+    "totalCreditSales":"ጠቅላላ የብድር ሽያጭ",
+    "thisMonthtotalCreditSales":"በዚህ ወር ጠቅላላ የብድር ሽያጭ",
+    "thisMonthtotalCashSales":"በዚህ ወር ጠቅላላ የገንዘብ ሽያጭ",
+    "totalSalesRefun":"የሽያጭ ተመላሽ ገንዘብ",
+    "totalproforma":"ጠቅላላ ፕሮፎርማ",
+    "itemsServiceNo":"የእቃ/አገልግሎት ብዛት",
+    "salesInvoice":"የሽያጭ ደረሰኝ",
+    "createInvoice":"ደረሰኝ አዘጋጅ",
+    "salesInvoiceList":"የተዘጋጀ ደረሰኝ ዝርዝር ",
+    "totalCashSales":"ጠቅላላ የገንዘብ ሽያጭ"
+    
+}

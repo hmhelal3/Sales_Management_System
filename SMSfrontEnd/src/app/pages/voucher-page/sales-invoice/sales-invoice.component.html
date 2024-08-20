@@ -1,0 +1,305 @@
+
+
+
+
+
+
+<div style="margin-left: 1615px; height: 40px; width: 100px; ;  background-color: rgba(171, 198, 221, 0.959); " class="titleb "><button class="btn btn-link" (click)="navigatinLst()"  type="button" >Search </button> </div>
+<form style="background-color: rgba(206, 215, 223, 0.959);  width: auto; margin-left: 15px; margin-right: auto;" class="row g-3">
+
+  
+  <!-- <div *ngFor="let customers of customers">
+    {{ customers.customerName }}</div>  -->
+    <div >    <label style="margin-left: 800px; width: 100px;" class="control-label  titleb">branch 1 </label> </div>
+       
+    <div class="title">Salece Invoce</div>
+    <!-- <form (ngSubmit)="saveItemServiceData()"   class="row g-3">  -->
+      <form [formGroup]="manageOrderForm" #manageOrderForm1  class="row g-3">
+    <div class="row g-1">
+        <label for="paymentTypeId" class="control-label col-sm-2" style="width: 150px;  text-align: right;">Payment Type</label>
+        <div class="col-sm">  
+            <!-- <select formControlName="paymentType" required class="form-select" id="paymentTypeId"   > -->
+              <select id="itemServiceNameId"  formControlName="paymentType"  name="paymentType"  required class="form-select" id="paymentTypeId"   >
+                <option value="Cash">Cash</option>
+                <option value="Credit">Credit</option>
+              </select> 
+              <!-- <div *ngIf="manageOrderForm.controls.paymentMethod.touched && manageOrderForm.controls.paymentMethod.invalid">
+              <span *ngIf="manageOrderForm.controls.paymentMethod.errors.required">This field is mandatory.</span>
+              <span *ngIf="manageOrderForm.controls.paymentMethod.errors.pattern">This field is invalid.</span>
+            </div> -->
+
+        </div>
+      <label for="customerNameIdi"  class="control-label col-sm-2" style="width: 150px;  text-align: right;">Customer Name</label>
+      <div class="col-sm">
+        <!-- <select  formControlName="customerName" #eventCust (change)="getCustomers(eventCust.value)"   class="form-select"  id="customerNameIdi"  > -->
+        <select formControlName="id"  #eventCust (change)="getCustomers(eventCust.value)"     class="form-select"  id="customerNameIdi"  >
+          <option *ngFor="let customer of customer1" [value]="customer.id">{{customer.customerName}}</option>
+        </select> 
+        
+        <!-- <div *ngIf="manageOrderForm.controls.customerName.touched && manageOrderForm.controls.customerName.invalid">
+          <span *ngIf="manageOrderForm.controls.customerName.errors.required">This field is mandatory.</span>
+          <span *ngIf="manageOrderForm.controls.customerName.errors.pattern">This field is invalid.</span>
+        </div> -->
+      </div>
+      <label for="tinNoid"   class="control-label col-sm-2" style="width: 150px; text-align: right;">Tin No.</label>
+    <div class="col-sm">
+      <input type="text" id="tinNoid"  formControlName="tinNo" required class="form-control"  placeholder="enter tin number ">
+      <!-- <div *ngIf="manageOrderForm.controls.tinNo.touched && manageOrderForm.controls.tinNo.invalid">
+        <span *ngIf="manageOrderForm.controls.tinNo.errors.required">This field is mandatory.</span>
+        <span *ngIf="manageOrderForm.controls.tinNo.errors.pattern">This field is invalid.</span>
+      </div> -->
+    </div>
+     
+    </div>
+ 
+</form>
+    <div style="margin-left: 20px;" class="row g-2 align-items-center">
+        <div class="adrass-detail col-md-8">Select Item/Service    </div>
+   </div>
+   <form [formGroup]="manageOrderForm" class="row g-3">
+   <div class="row g-1">
+    <label for="itemServiceNameId"  class="control-label col-sm-3" style="width: 150px;  text-align: right;">Item/Service Name</label>
+    <div class="col-sm">
+      <select  formControlName="id" #event (change)="getItemServices(event.value)"  name="itemServiceName"   [(ngModel)]="newRow.itemServiceName"   class="form-select"  id="itemServiceNameId"  >
+        <option *ngFor="let product of itemSrvices1" [value]="product.id">{{product.itemServiceName}}</option>
+      </select> 
+    </div>
+    <label for="codeid"   class="control-label col-sm-2" style="width: 150px; text-align: right;"> Code</label>
+  <div class="col-sm">
+    <input type="text" id="codeid" formControlName="code"  name="code"  [(ngModel)]="newRow.code"    class="form-control"  placeholder="enter the code ">
+   
+  </div>
+  <label for="categoryId" class="control-label col-sm-2" style="width: 150px;  text-align: right;">Category </label>
+  <div class="col-sm">
+    <input type="text" id="categoryId" formControlName="category"  name="category"  [(ngModel)]="newRow.categoryId"    class="form-control"  placeholder="enter the code ">
+  
+  </div>
+  </div>  
+
+  <div class="row g-2">
+    <label for="uomId" class="control-label col-sm-2" style="width: 150px; text-align: right;">UOM </label>
+    <div class="col-sm">
+        <input type="text" id="uomId" formControlName="uom"   name="uom"  [(ngModel)]="newRow.uom"   class="form-control" >
+      </div>
+      <label for="taxId"  class="control-label col-sm-2" style="width: 150px; text-align: right; ">Tax</label>
+      <div class="col-sm">
+        <input type="text" id="taxId" formControlName="tax" name="tax"  [(ngModel)]="newRow.tax"    class="form-control" >
+        </div>
+        <label for="quantityid" class="control-label col-sm-2" style="width: 150px; text-align: right;">Quantity </label>
+        <div class="col-sm">
+          <input type="text" id="quantityid" formControlName="quantity"   name="quantity"  [(ngModel)]="newRow.quantity"   class="form-control" placeholder="enter quantity" >
+          </div>
+  </div>
+     
+      <div class="row g-2">
+     
+         <label for="purchasedPriceid"  class="control-label col-sm-2" style="width: 150px; text-align: right; ">Purchased Price</label>
+         <div class="col-sm">
+           <input type="text" id="purchasedPriceid" formControlName="purchasedPrice"  name="purchasedPrice"  [(ngModel)]="newRow.purchasedPrice"   class="form-control" placeholder="purchasedPrice" >
+         </div>
+         <label for="sellingUnitPriceid"  class="control-label col-sm-2" style="width: 150px; text-align: right; ">Selling Unit Price </label>
+         <div class="col-sm">
+           <input type="text" id="sellingUnitPriceid" formControlName="sellingUnitPrice"      name="sellingUnitPrice"  [(ngModel)]="newRow.sellingUnitPrice"  class="form-control" placeholder="enter selling Unit Price" >
+           </div>
+           <label   class="control-label col-sm-2" style="width: 150px; text-align: right; ">Total Price</label>
+           <div class="col-sm">
+            <input type="text" id="sellingUnitPriceid" formControlName="totalPrice"   name="totalPrice" class="form-control"  >
+             </div>
+     </div>
+     <div class="col-12">     
+         
+      
+      
+      <!-- <button style="margin-left: 700px; width: 100px;"  type="button"  (click)="addDataToTable1()" class="btn btn-primary">Add</button> -->
+      <button style="margin-left: 700px; width: 100px;"  type="button"  (click)="addRow()" class="btn btn-primary">Add Row</button>
+      </div>
+
+
+   
+      <table   style="margin-left: 100px; width: 1400px;"  class="table table-striped table-bordered table-sm row-border hover  table-hover " id="datatableexample">
+        <thead class="bg-clr">
+          <tr>
+           
+            <th style="width: auto;">Item/Service Name </th>
+            <th style="width: auto;">Code</th>
+            <th style="width: auto;">UOM</th>
+            <th style="width: auto;">Category</th>
+            <th style="width: auto;">description</th>
+            <th style="width: auto;">Quantity</th>
+            <th style="width: auto;">Tax</th>
+            <th style="width: auto;">Purchased Unit Price</th>
+            <th style="width: auto;">Selling Unit Price</th>
+            <th style="width: auto;">total Price </th>
+         
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of tableData">
+            <td>{{ row.itemServiceName }}</td>
+            <td>{{ row.code }}</td>
+            <td>{{ row.uom }}</td>
+            <td>{{ row.categoryId }}</td>
+            <td>{{ row.description }}</td>
+            <td>{{ row.quantity }}</td>
+            <td>{{ row.tax }}</td>
+            <td>{{ row.purchasedPrice }}</td>
+            <td>{{ row.sellingUnitPrice }}</td>
+            <td>{{totalPrice }}</td>
+       
+       
+             
+       </tr>
+        </tbody> 
+          
+      </table>
+  
+  
+
+
+</form>
+   
+
+
+
+   
+
+
+
+    
+<br> <br>
+<div class="col-12">
+  <br> <br>
+<button style="margin-left: 700px; width: 100px;" type="submit" class="btn btn-primary">Save</button>
+<br> <br>
+</div>
+
+
+</form>
+
+
+
+
+
+
+//////////////////////////////////////////////////////////<!-- table.component.html --> /////////////////////////
+
+<div class="form-group">
+  <input type="text" class="form-control" [(ngModel)]="newRow.itemServiceName" (input)="onSearch()" placeholder="Search by name..." list="dynmicUserIds" >
+  <datalist id="dynmicUserIds">
+    <option *ngFor="let item of itemSrvices2" [value]="item.itemServiceName">{{item.itemServiceName}}</option>
+ </datalist>
+</div>
+
+<div class="row g-1">
+  <label for="itemServiceNameId"  class="control-label col-sm-3" style="width: 150px;  text-align: right;">Item/Service Name</label>
+  <div class="col-sm">
+    <input type="text" class="form-control" [(ngModel)]="newRow.itemServiceName" (input)="onSearch()" placeholder="Search by name..." list="dynmicUserIds" >
+    <datalist id="dynmicUserIds">
+      <option *ngFor="let item of itemSrvices2" [value]="item.itemServiceName">{{item.itemServiceName}}</option>
+   </datalist>
+  </div>
+  <label for="codeid"   class="control-label col-sm-2" style="width: 150px; text-align: right;"> Code</label>
+<div class="col-sm">
+  <input type="text" id="codeid"  name="code"  [(ngModel)]="newRow.code"     class="form-control"  placeholder="enter the code ">
+ 
+</div>
+<label for="categoryId" class="control-label col-sm-2" style="width: 150px;  text-align: right;">Category </label>
+<div class="col-sm">
+  <input type="text" id="categoryId" name="category"  [(ngModel)]="newRow.categoryId"    class="form-control"  placeholder="enter the code ">
+
+</div>
+</div>  
+
+
+
+
+
+
+
+<!-- <ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of itemSrvices2">
+    {{ item.itemServiceName }}
+  </li>    
+</ul> -->
+
+
+
+
+
+
+<!-- 
+<div class="container mt-5">
+   
+  <div class="form-group">
+    <label for="name">item Service Name:</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="newRow.itemServiceName" />
+  </div>
+  <div class="form-group">
+    <label for="age">Code:</label>
+    <input type="number" class="form-control" id="age" [(ngModel)]="newRow.code" />
+  </div>
+  <div class="form-group">
+    <label for="city">uom:</label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="newRow.uom" />
+  </div>
+  <div class="form-group">
+    <label for="city">categoryId:</label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="newRow.categoryId" />
+  </div>
+  <div class="form-group">
+    <label for="city">description:</label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="newRow.description" />
+  </div>
+  <div class="form-group">
+    <label for="city">quantity:</label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="newRow.quantity" />
+  </div>
+  <div class="form-group">
+    <label for="city">tax:</label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="newRow.tax" />
+  </div>
+  <div class="form-group">
+    <label for="city">purchasedPrice:</label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="newRow.purchasedPrice" />
+  </div>
+  <div class="form-group">
+    <label for="city">sellingUnitPrice:</label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="newRow.sellingUnitPrice" />
+  </div>
+
+  <button class="btn btn-primary" (click)="addRow()">Add Row</button>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>itemServiceName</th>
+        <th>Code</th>
+        <th>UOM</th>
+        <th>category</th>
+        <th>description</th>
+        <th>Qty</th>
+        <th>tax</th>
+        <th>purchasedPrice</th>
+        <th>sellingUnitPrice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData">
+        <td>{{ row.id }}</td>
+        <td>{{ row.itemServiceName }}</td>
+        <td>{{ row.code }}</td>
+        <td>{{ row.uom }}</td>
+        <td>{{ row.categoryId }}</td>
+        <td>{{ row.description }}</td>
+        <td>{{ row.quantity }}</td>
+        <td>{{ row.tax }}</td>
+        <td>{{ row.purchasedPrice }}</td>
+        <td>{{ row.sellingUnitPrice }}</td>
+      </tr>
+    </tbody>
+  </table>
+   
+</div> -->
+
