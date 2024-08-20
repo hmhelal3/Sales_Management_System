@@ -1,6 +1,6 @@
 # Sales_Management_System_using-spring-boot-and-angular
 
-__[Sales Management System (SMS)](https://github.com/DemisD/Sales_Management_System_Using-SpringBoot-and-Angular)__
+__[Sales Management System (SMS)](https://github.com/hmhelal3/Sales_Management_System.git)__
 
 
 ### Functionality performed by Sales Management System (SMS):
@@ -51,4 +51,4 @@ __[Sales Management System (SMS)](https://github.com/DemisD/Sales_Management_Sys
 ![customerList](https://github.com/DemisD/Sales_Management_System_Using-SpringBoot-and-Angular/assets/48995115/30b4b2ac-bb23-44d4-b494-e0de94e107c7)
 
 Conttact Us
-Email: demisbokt@gmail.com
+Email: helalhossainmohammad@gmail.com
